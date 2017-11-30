@@ -17,6 +17,11 @@ pipeline {
             sh '/usr/bin/ansible-playbook /tmp/apache.yml'
           }
         }
+        stage('tomcat') {
+          steps {
+            sh '/usr/bin/ansible-playbook /tmp/tomcat.yml'
+          }
+        }
       }
     }
     stage('Test') {
@@ -32,7 +37,7 @@ pipeline {
             sh 'scp /tmp/lala* root@10.28.107.98:/var/www'
           }
         }
-        stage('') {
+        stage('error') {
           environment {
             prod = 'prod'
           }
