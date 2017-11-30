@@ -11,9 +11,10 @@ pipeline {
             pwd(tmp: true)
           }
         }
-        stage('') {
+        stage('prueba2') {
           steps {
             echo 'hola'
+            ansiblePlaybook 'apache.yml'
           }
         }
       }
