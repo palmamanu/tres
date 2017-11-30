@@ -11,11 +11,9 @@ pipeline {
             pwd(tmp: true)
           }
         }
-        stage('estadoparalelo') {
+        stage('') {
           steps {
-            echo 'empieza el estado'
-            ansiblePlaybook(installation: 'ansible', playbook: '/tmp/apache.yml')
-            pwd(tmp: true)
+            echo 'hola'
           }
         }
       }
