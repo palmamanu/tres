@@ -20,8 +20,18 @@ pipeline {
       }
     }
     stage('Test') {
-      steps {
-        echo 'Testing...'
+      parallel {
+        stage('Test') {
+          steps {
+            echo 'Testing...'
+          }
+        }
+        stage('copia estaticos') {
+          steps {
+            pwd(tmp: true)
+            sh 'scp /tmp/lala* root@10.28.107.98:/var/www'
+          }
+        }
       }
     }
     stage('Testeadoya') {
