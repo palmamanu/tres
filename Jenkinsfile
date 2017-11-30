@@ -14,7 +14,7 @@ pipeline {
         stage('prueba2') {
           steps {
             echo 'hola'
-            sh '/usr/bin/ansible-playbooks /tmp/apache.yml'
+            sh '/usr/bin/ansible-playbook /tmp/apache.yml'
           }
         }
       }
