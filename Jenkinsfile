@@ -32,6 +32,15 @@ pipeline {
             sh 'scp /tmp/lala* root@10.28.107.98:/var/www'
           }
         }
+        stage('') {
+          environment {
+            prod = 'prod'
+          }
+          steps {
+            sleep 12
+            sh '/usr/bin/ansible-playbook /tmp/tomcat.yml'
+          }
+        }
       }
     }
     stage('Testeadoya') {
