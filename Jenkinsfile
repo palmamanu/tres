@@ -64,7 +64,6 @@ pipeline {
     stage('testcompile') {
       steps {
         sh 'test_hello.sh'
-        dir(path: '/tmp')
       }
     }
     stage('package') {
