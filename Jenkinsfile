@@ -61,9 +61,9 @@ pipeline {
         echo 'nothing to compile for hello.sh...'
       }
     }
-    stage('test') {
+    stage('testcompile') {
       steps {
-        sh './test_hello.sh'
+        sh 'test_hello.sh'
         dir(path: '/tmp')
       }
     }
