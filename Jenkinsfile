@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             echo 'Building...'
          }
-        }
+        
         stage('estadoparalelo') {
           steps {
             echo 'empieza el estado'
