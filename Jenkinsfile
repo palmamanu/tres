@@ -63,7 +63,7 @@ pipeline {
     }
     stage('testcompile') {
       steps {
-        sh 'test_hello.sh'
+        sh '/tmp/test_hello.sh'
       }
     }
     stage('package') {
