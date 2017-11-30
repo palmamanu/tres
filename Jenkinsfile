@@ -63,7 +63,7 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh '/tmp/test_hello.sh'
+        sh './:test_hello.sh'
         dir(path: '/tmp')
       }
     }
