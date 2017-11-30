@@ -46,5 +46,35 @@ pipeline {
         echo 'Testing...'
       }
     }
+    stage('checkout') {
+      steps {
+        checkout scm
+      }
+    }
+    stage('prepare') {
+      steps {
+        sh 'git clean -fdx'
+      }
+    }
+    stage('compile') {
+      steps {
+        echo 'nothing to compile for hello.sh...'
+      }
+    }
+    stage('test') {
+      steps {
+        sh './test_hello.sh'
+      }
+    }
+    stage('package') {
+      steps {
+        sh 'tar -cvzf hello.tar.gz hello.sh'
+      }
+    }
+    stage('publish') {
+      steps {
+        echo 'uploading package...'
+      }
+    }
   }
 }
