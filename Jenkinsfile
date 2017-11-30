@@ -1,7 +1,6 @@
 pipeline {
     stages {
-    stage('Build') {
-      parallel {
+     parallel {
         stage('Build') {
             echo 'Building...'
          }
