@@ -60,6 +60,7 @@ pipeline {
     stage('compile') {
       steps {
         echo 'nothing to compile for hello.sh...'
+        sh 'mvn clean compile war:war'
       }
     }
     stage('testcompile') {
