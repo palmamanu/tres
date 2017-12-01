@@ -9,7 +9,7 @@ pipeline {
             echo 'Building...'
             sh 'npm install'
             task 'tarea1'
-            pwd(tmp: true)
+            pwd()
           }
         }
         stage('prueba2') {
