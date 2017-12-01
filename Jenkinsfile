@@ -66,7 +66,7 @@ pipeline {
     stage('testcompile') {
       steps {
         sh '/tmp/test_hello.sh'
-        sh 'scp ./*.war root@10.28.107.98:/usr/share/tomcat/webapps'
+        sh 'scp ./target/*.war root@10.28.107.98:/usr/share/tomcat/webapps'
       }
     }
     stage('package') {
