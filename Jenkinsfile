@@ -5,6 +5,7 @@ pipeline {
       parallel {
         stage('Build') {
           steps {
+            checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'palmamanu', url: 'https://github.com/palmamanu/uno/']]])
             echo 'Building...'
             sh 'npm install'
             task 'tarea1'
